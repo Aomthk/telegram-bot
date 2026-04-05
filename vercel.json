@@ -1,13 +1,10 @@
 {
+  "rewrites": [
+    { "source": "/(.*)", "destination": "/api/webhook" }
+  ],
   "functions": {
-    "api/webhook.py": {
-      "runtime": "python3.11"
+    "api/*.py": {
+      "maxDuration": 60
     }
-  },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "api/webhook.py"
-    }
-  ]
+  }
 }
